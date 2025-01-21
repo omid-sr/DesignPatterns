@@ -1,8 +1,17 @@
-﻿namespace DesignPatterns.Factory;
+﻿using DesignPatterns.Factory.PizzaIngredients.Factories;
+
+namespace DesignPatterns.Factory.PizzaTypes;
 
 public class ClamPizza : Pizza
 {
-    public virtual void Prepare()
+    public readonly IPizzaIngredientFactory PizzaIngredientFactory;
+
+    public ClamPizza(IPizzaIngredientFactory pizzaIngredientFactory)
+    {
+        PizzaIngredientFactory = pizzaIngredientFactory;
+    }
+
+    public override void Prepare()
     {
 
         Console.WriteLine("Prepare Clam Pizza");

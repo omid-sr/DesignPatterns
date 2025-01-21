@@ -1,4 +1,6 @@
-﻿namespace DesignPatterns.Factory;
+﻿using System.Security.Claims;
+
+namespace DesignPatterns.Factory;
 
 public abstract class PizzaStore
 {

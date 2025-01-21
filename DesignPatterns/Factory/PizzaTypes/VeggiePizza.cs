@@ -1,8 +1,18 @@
-﻿namespace DesignPatterns.Factory.PizzaTypes;
+﻿using DesignPatterns.Factory.PizzaIngredients.Factories;
+
+namespace DesignPatterns.Factory.PizzaTypes;
 
 public class VeggiePizza : Pizza
 {
-    public virtual void Prepare()
+
+    public IPizzaIngredientFactory PizzaIngredientFactory;
+
+    public VeggiePizza(IPizzaIngredientFactory pizzaIngredientFactory)
+    {
+        PizzaIngredientFactory = pizzaIngredientFactory;
+    }
+
+    public override void Prepare()
     {
 
         Console.WriteLine("Prepare Veggie Pizza");
